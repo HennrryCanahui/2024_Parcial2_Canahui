@@ -1,0 +1,3 @@
+C:/Users/hennr/OneDrive/Escritorio/2024_Parcial2_Canahui/cmake-build-debug/CMakeFiles/2024_Parcial2_Canahui.dir
+C:/Users/hennr/OneDrive/Escritorio/2024_Parcial2_Canahui/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/hennr/OneDrive/Escritorio/2024_Parcial2_Canahui/cmake-build-debug/CMakeFiles/rebuild_cache.dir
