@@ -1,13 +1,14 @@
 #include <iostream>
 #include <fstream>
-#include <filesystem>
 #include <string>
-#include "windows.h"
 #include <direct.h>
 
 using namespace std;
+
 void crearArchivos(int cantidad);
 void Crear_capeta(int cantidad);
+void agregarTexto();
+void escribirArchivo(int cantidad, string nombreArchivo, string ruta);
 
 int main() {
     int opc;
@@ -47,29 +48,22 @@ void crearArchivos(int cantidad){
     string nombreArchivo = "file";
     if (cantidad % 2 == 0){
         cout << "Cantidad de Archivos par" << endl;
-        for (int i = 0; i < cantidad; ++i) {
-            ofstream file;
-            file.open("C:\\Users\\hennr\\OneDrive\\Escritorio\\par\\ " + nombreArchivo + to_string(i + 1) + ".txt");
-
-            for (int j = 0; j < i+1; ++j) {
-                //
-            }
-            file.close();
-        }
-        cout << cantidad << " Archivos creados con Exito" << endl;
-
-    }else{
+        escribirArchivo(cantidad, nombreArchivo, "C:\\Users\\hennr\\OneDrive\\Escritorio\\par\\ ");
+    }else {
         cout << "Cantidad de Archivos impar" << endl;
-        for (int i = 0; i < cantidad; ++i) {
-            ofstream file;
-            file.open("C:\\Users\\hennr\\OneDrive\\Escritorio\\impar\\ " + nombreArchivo + to_string(i + 1) +" .txt");
-            for (int j = 0; j < i+1; ++j) {
-                //
-            }
-            file.close();
-        }
-        cout << cantidad << " Archivos creados con Exito" << endl;
+        escribirArchivo(cantidad, nombreArchivo, "C:\\Users\\hennr\\OneDrive\\Escritorio\\impar\\ ");
     }
 }
 
+void escribirArchivo(int cantidad, string nombreArchivo, string ruta){
+    for (int i = 0; i < cantidad; ++i) {
+        ofstream file;
+        file.open(ruta + nombreArchivo + to_string(i + 1) + ".txt");
 
+        for (int j = 0; j < i+1; ++j) {
+            file << "linea de texto" << endl;
+        }
+        file.close();
+    }
+    cout << cantidad << " Archivos creados con Exito" << endl;
+}
